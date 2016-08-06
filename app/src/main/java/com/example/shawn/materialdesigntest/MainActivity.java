@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         rvToDoList = (RecyclerView) findViewById(R.id.rvToDoList);
 //        rvToDoList.setLayoutManager(new LinearLayoutManager(this));
         rvToDoList.setLayoutManager(new GridLayoutManager(this,4));
+//        rvToDoList.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
         rvToDoList.setAdapter(mAdapter);
 //        rvToDoList.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
         rvToDoList.addItemDecoration(new GridDividerItemDecoration(this));
@@ -48,8 +50,7 @@ public class MainActivity extends AppCompatActivity
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
         {
             View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.itemview,parent,false);
-            MyViewHolder holder = new MyViewHolder(view);
-            return holder;
+            return new MyViewHolder(view);
         }
 
         @Override

@@ -8,12 +8,15 @@ import android.graphics.LinearGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
+
+import com.example.shawn.materialdesigntest.R;
 
 /**
  * Created by Shawn on 2016/8/4.
@@ -59,6 +62,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration
         {
             View child = parent.getChildAt(i);
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            //ViewCompat.getTranslationX(child) 获得X轴的偏移量
             int left = child.getRight()+params.rightMargin+Math.round(ViewCompat.getTranslationX(child));
             int right = left+mDivider.getIntrinsicHeight();
             mDivider.setBounds(left,top,right,bottom);
@@ -74,6 +78,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration
         {
             View child = parent.getChildAt(i);
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            //ViewCompat.getTranslationY(child) 获得Y轴的偏移量
             int top = child.getBottom() + params.bottomMargin + Math.round(ViewCompat.getTranslationY(child));
             int bottom = top+mDivider.getIntrinsicHeight();
             mDivider.setBounds(left,top,right,bottom);
