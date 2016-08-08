@@ -1,11 +1,10 @@
 package com.example.shawn.materialdesigntest;
 import android.graphics.Canvas;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity
         rvToDoList = (RecyclerView) findViewById(R.id.rvToDoList);
 //        rvToDoList.setLayoutManager(new LinearLayoutManager(this));
         rvToDoList.setLayoutManager(new GridLayoutManager(this,4));
-//        rvToDoList.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
         rvToDoList.setAdapter(mAdapter);
 //        rvToDoList.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
         rvToDoList.addItemDecoration(new GridDividerItemDecoration(this));
