@@ -23,7 +23,6 @@ public class StaggeredHomeAdapter extends RecyclerView.Adapter<StaggeredHomeAdap
     public interface OnItemClickLitener
     {
         void onItemClick(View view, int position);
-
         void onItemLongClick(View view, int position);
     }
 
